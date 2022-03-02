@@ -98,3 +98,26 @@ resource "kubernetes_deployment" "bind" {
         kubernetes_config_map.records-db,
     ]
 }
+
+resource "kubernetes_service" "bind" {
+  metadata {
+    name = "bind"
+    namespace = "${var.bind_namespace}"
+  }
+  spec {
+    selector = {
+      app = "bind"
+    }
+    port {
+      port        = 53
+      protocol = "TCP"
+    }
+    port {
+      port        = 53
+      protocol = "UDP"
+    }
+    type = "LoadBalancer"
+  }
+  depends_on = [kubernetes_namespace.bind]
+}
+
