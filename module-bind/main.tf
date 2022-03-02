@@ -100,22 +100,21 @@ resource "kubernetes_deployment" "bind" {
 }
 
 resource "kubernetes_service" "bind" {
-  metadata {
-    name = "bind"
-    namespace = "${var.bind_namespace}"
-  }
-  spec {
-    selector = {
-      app = "bind"
+    metadata {
+        name = "bind"
+        namespace = "${var.bind_namespace}"
     }
-    port {
-      port        = 53
-      target_port = 53
-      protocol = "UDP"
-      name = "bind-udp"
+    spec {
+        selector = {
+            app = "bind"
+        }
+        port {
+            port        = 53
+            target_port = 53
+            protocol = "UDP"
+            name = "bind-udp"
+        }
+        type = "LoadBalancer"
     }
-    type = "LoadBalancer"
-  }
-  depends_on = [kubernetes_namespace.bind]
+    depends_on = [kubernetes_namespace.bind]
 }
-
