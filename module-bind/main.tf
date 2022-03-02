@@ -75,6 +75,7 @@ resource "kubernetes_deployment" "bind" {
                         name = "named-conf"
                         items {
                             key = "config"
+                            path = "named.conf"
                         }
                     }
                 }
@@ -84,6 +85,7 @@ resource "kubernetes_deployment" "bind" {
                         name = "records-db"
                         items {
                             key = "config"
+                            path = "records.db"
                         }
                     }
                 }
