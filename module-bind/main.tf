@@ -61,17 +61,19 @@ resource "kubernetes_deployment" "bind" {
                     volume_mount {
                         name = "named-conf"
                         mount_path = "/etc/bind/named.conf"
+                        sub_path = "named.conf"
                     }
                     volume_mount {
                         name = "records-db"
                         mount_path = "/etc/bind/records.db"
+                        sub_path = "records.db"
                     }
                 }
                 volume {
                     name = "named-conf"
                     config_map {
                         name = "named-conf"
-                    }                  
+                    }
                 }
                 volume {
                     name = "records-db"
