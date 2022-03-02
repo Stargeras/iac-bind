@@ -112,11 +112,13 @@ resource "kubernetes_service" "bind" {
       port        = 53
       target_port = 53
       protocol = "TCP"
+      name = "bind-tcp"
     }
     port {
       port        = 53
       target_port = 53
       protocol = "UDP"
+      name = "bind-udp"
     }
     type = "LoadBalancer"
   }
