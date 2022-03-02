@@ -73,12 +73,18 @@ resource "kubernetes_deployment" "bind" {
                     name = "named-conf"
                     config_map {
                         name = "named-conf"
+                        items {
+                            key = "config"
+                        }
                     }
                 }
                 volume {
                     name = "records-db"
                     config_map {
                         name = "records-db"
+                        items {
+                            key = "config"
+                        }
                     }
                 }
             }
