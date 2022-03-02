@@ -82,5 +82,9 @@ resource "kubernetes_deployment" "bind" {
             }
         }
     }
-    depends_on = [kubernetes_namespace.bind]
+    depends_on = [
+        kubernetes_namespace.bind,
+        kubernetes_config_map.named-conf,
+        kubernetes_config_map.records-db,
+    ]
 }
