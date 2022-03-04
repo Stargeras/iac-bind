@@ -12,5 +12,3 @@ $TTL    604800
 @       IN      A       127.0.0.1
 @       IN      AAAA    ::1
 webapp  IN      A       23.82.1.70
-nexus   IN      A       23.82.1.70
-pgadmin IN      A       23.82.1.70
