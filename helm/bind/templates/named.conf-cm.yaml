@@ -19,7 +19,7 @@ data:
             // the all-0's placeholder.
   
              forwarders {
-{{ .Values.domain.forwarder | indent 17 }};
+{{ .Values.domain.forwarders | indent 17 }};
              };
 
             //========================================================================

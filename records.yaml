@@ -1,0 +1,13 @@
+records:
+  - name: webapp
+    type: A
+    target: "23.82.1.70"
+  - name: nexus
+    type: A
+    target: "23.82.1.70"
+  - name: jellyfin
+    type: A
+    target: "23.82.1.80"
+  - name: pgadmin
+    type: A
+    target: "23.82.1.70"

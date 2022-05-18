@@ -12,7 +12,7 @@ image:
 
 domain:
   name: local.domain
-  forwarder: "23.82.1.1"
+  forwarders: "23.82.1.1"
 
 records:
   - name: webapp
