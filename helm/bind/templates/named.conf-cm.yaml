@@ -28,7 +28,6 @@ data:
             //========================================================================
             dnssec-validation no;
             auth-nxdomain no;
-            filter-aaaa-on-v4 yes;
 
             listen-on-v6 { any; };
             allow-recursion { any; };
