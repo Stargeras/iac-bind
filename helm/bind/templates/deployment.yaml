@@ -32,13 +32,13 @@ spec:
         configMap:
           name: {{ include "bind.fullname" . }}-named-conf
           items:
-          - key: data
+          - key: named.conf
             path: named.conf
       - name: {{ include "bind.fullname" . }}-records-db
         configMap:
           name: {{ include "bind.fullname" . }}-records-db
           items:
-          - key: data
+          - key: records.db
             path: records.db
       containers:
         - name: {{ .Chart.Name }}
