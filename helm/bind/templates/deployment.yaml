@@ -58,7 +58,7 @@ spec:
               containerPort: 53
               protocol: TCP
             - name: dns-udp
-              containerPort: 54
+              containerPort: 53
               protocol: UDP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
